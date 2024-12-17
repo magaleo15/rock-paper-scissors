@@ -11,7 +11,7 @@ function getComputerChoice() {
   } else {
     computerChoice = "scissors";
   }
-  console.log(computerChoice);
+  console.log(`Computer Played: ${computerChoice}`);
   return computerChoice;
 }
 
@@ -20,57 +20,89 @@ function getComputerChoice() {
 function getHumanChoice() {
   let humanChoice;
   humanChoice = prompt("Please select: Rock, Paper or Scissors");
-  console.log(humanChoice.toLowerCase);
+  console.log(`Human Played: ${humanChoice.toLowerCase()}`);
   return humanChoice.toLowerCase();
 }
 
 // Keep track of score in console
-// humanScore
-// computerScore
+
+let computerScore = 0;
+let humanScore = 0;
 
 // playRound function
 
 function playRound() {
-  let humanChoice = getHumanChoice();
-
-  let computerChoice = getComputerChoice();
+  const humanChoice = getHumanChoice();
+  const computerChoice = getComputerChoice();
 
   if (humanChoice === computerChoice) {
     alert(`You both selected ${computerChoice}. DRAW!`);
+    humanScore += 1;
+    computerScore += 1;
   } else if (humanChoice === "rock") {
     if (computerChoice === "scissors") {
       alert(
         `Human selected ${humanChoice}, Computer selected ${computerChoice}. HUMAN WON!`
       );
+      humanScore += 1;
     } else {
       alert(
         `Human selected ${humanChoice}, Computer selected ${computerChoice}. COMPUTER WON!`
       );
+      computerScore += 1;
     }
   } else if (humanChoice === "paper") {
     if (computerChoice === "scissors") {
       alert(
         `Human selected ${humanChoice}, Computer selected ${computerChoice}. HUMAN WON!`
       );
+      humanScore += 1;
     } else {
       alert(
         `Human selected ${humanChoice}, Computer selected ${computerChoice}. COMPUTER WON!`
       );
+      computerScore += 1;
     }
   } else if (humanChoice === "scissors") {
     if (computerChoice === "paper") {
       alert(
         `Human selected ${humanChoice}, Computer selected ${computerChoice}. HUMAN WON!`
       );
+      humanScore += 1;
     } else {
       alert(
         `Human selected ${humanChoice}, Computer selected ${computerChoice}. COMPUTER WON!`
       );
+      computerScore += 1;
     }
   }
 }
-playRound();
 
-// play 5 rounds option
+function whoWon(computerScore, humanScore) {
+  if (computerScore === humanScore) {
+    console.log(
+      `It was a DRAW: Computer ${computerScore} x ${humanScore} Human`
+    );
+  } else if (computerScore > humanScore) {
+    console.log(
+      `Computer WON! Computer ${computerScore} x ${humanScore} Human`
+    );
+  } else if (humanScore > computerScore) {
+    console.log(`Human WON! Computer ${computerScore} x ${humanScore} Human`);
+  }
+}
 
-// options with buttons
+function playGame() {
+  let roundCount = 0;
+  while (roundCount <= 5) {
+    playRound();
+    console.log(`Round ${roundCount} just ended`);
+    console.log(`Human Score: ${humanScore}`);
+    console.log(`Computer Score: ${computerScore}`);
+
+    roundCount += 1;
+  }
+  whoWon(humanScore, computerScore);
+}
+
+playGame();
