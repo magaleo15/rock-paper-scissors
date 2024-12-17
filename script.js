@@ -3,7 +3,7 @@ console.log("Hello World");
 // computer should randomize their choice
 function getComputerChoice() {
   let computerNumber = Math.random();
-  let computerChoice = "";
+  let computerChoice;
   if (computerNumber > 0.666) {
     computerChoice = "paper";
   } else if (computerNumber < 0.333) {
@@ -13,6 +13,8 @@ function getComputerChoice() {
   }
   return computerChoice;
 }
+
+console.log(getComputerChoice());
 // user should select their option
 // getHumanChoice
 // game should either
