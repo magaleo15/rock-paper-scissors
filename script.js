@@ -23,11 +23,8 @@ function getHumanChoice() {
   console.log(humanChoice.toLowerCase);
   return humanChoice.toLowerCase();
 }
-// game should either
-// user win
-// computer win
-// draw
-// Keep track of score
+
+// Keep track of score in console
 // humanScore
 // computerScore
 
