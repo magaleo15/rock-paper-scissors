@@ -27,13 +27,6 @@ const buttons = document.querySelectorAll("button");
 const humanScore = document.querySelector(".human-score");
 const computerScore = document.querySelector(".computer-score");
 
-// playround should be like:
-// click on option
-// randomize computer
-// humanchoice should be the selected one
-// should add one to the winner or 1 to each or 0 to each in draw soesn't matter
-// should end on who gets 5 before
-
 buttons.forEach((button) =>
   button.addEventListener("click", (e) => {
     playRound(e);
@@ -101,32 +94,3 @@ function playRound(e) {
     computerScore.textContent = 0;
   }
 }
-
-// function whoWon(computerScore, humanScore) {
-//   if (computerScore === humanScore) {
-//     console.log(
-//       `It was a DRAW: Computer ${computerScore} x ${humanScore} Human`
-//     );
-//   } else if (computerScore > humanScore) {
-//     console.log(
-//       `Computer WON! Computer ${computerScore} x ${humanScore} Human`
-//     );
-//   } else if (humanScore > computerScore) {
-//     console.log(`Human WON! Computer ${computerScore} x ${humanScore} Human`);
-//   }
-// }
-
-// // function playGame() {
-// //   let roundCount = 0;
-// //   while (roundCount <= 5) {
-// //     playRound();
-// //     console.log(`Round ${roundCount} just ended`);
-// //     console.log(`Human Score: ${humanScore}`);
-// //     console.log(`Computer Score: ${computerScore}`);
-
-// //     roundCount += 1;
-// //   }
-// //   whoWon(humanScore, computerScore);
-// // }
-
-// // playGame();
