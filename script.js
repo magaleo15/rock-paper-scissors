@@ -24,6 +24,7 @@ const scissors = document.querySelector("#scissors");
 const buttons = document.querySelectorAll("button");
 
 // scores might need to convert to Number
+const whoWon = document.querySelector(".who");
 const humanScore = document.querySelector(".human-score");
 const computerScore = document.querySelector(".computer-score");
 
@@ -49,11 +50,13 @@ function playRound(e) {
       //   `Human selected ${humanChoice}, Computer selected ${computerChoice}. HUMAN WON!`
       // );
       humanScore.textContent = Number(humanScore.textContent) + 1;
+      whoWon.textContent = "Human";
     } else {
       // alert(
       //   `Human selected ${humanChoice}, Computer selected ${computerChoice}. COMPUTER WON!`
       // );
       computerScore.textContent = Number(computerScore.textContent) + 1;
+      whoWon.textContent = "Computer";
     }
   } else if (humanChoice === "paper") {
     if (computerChoice === "scissors") {
@@ -61,11 +64,13 @@ function playRound(e) {
       //   `Human selected ${humanChoice}, Computer selected ${computerChoice}. HUMAN WON!`
       // );
       humanScore.textContent = Number(humanScore.textContent) + 1;
+      whoWon.textContent = "Human";
     } else {
       // alert(
       //   `Human selected ${humanChoice}, Computer selected ${computerChoice}. COMPUTER WON!`
       // );
       computerScore.textContent = Number(computerScore.textContent) + 1;
+      whoWon.textContent = "Computer";
     }
   } else if (humanChoice === "scissors") {
     if (computerChoice === "paper") {
@@ -73,11 +78,13 @@ function playRound(e) {
       //   `Human selected ${humanChoice}, Computer selected ${computerChoice}. HUMAN WON!`
       // );
       humanScore.textContent = Number(humanScore.textContent) + 1;
+      whoWon.textContent = "Human";
     } else {
       // alert(
       //   `Human selected ${humanChoice}, Computer selected ${computerChoice}. COMPUTER WON!`
       // );
       computerScore.textContent = Number(computerScore.textContent) + 1;
+      whoWon.textContent = "Computer";
     }
   }
   if (Number(computerScore.textContent) >= 5) {
